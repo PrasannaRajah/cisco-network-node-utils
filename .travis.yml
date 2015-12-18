@@ -12,9 +12,9 @@ rvm:
   - 2.0.0
 
 before_install:
-  - git clone https://github.com/murgatroid99/grpc.git
+  - git clone https://github.com/robert-w-gries/grpc.git
   - cd grpc
-  - git checkout ruby_bundle_core_release
+  - git checkout release-0_12
   - gem build grpc.gemspec
   - gem install --local --force grpc-*.gem
   - mkdir -p ../vendor/cache
