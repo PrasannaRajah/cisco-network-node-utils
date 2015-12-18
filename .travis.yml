@@ -12,14 +12,12 @@ rvm:
   - 2.0.0
 
 before_install:
-  # sudo apt-get install libgrpc-dev doesn't work in Travis.
-  # So instead we compile and install from source,
-  # which takes about 10 minutes. Not too painful.
   - git clone https://github.com/murgatroid99/grpc.git
   - cd grpc
   - git checkout ruby_bundle_core_release
   - gem build grpc.gemspec
-  - gem install --local grpc-*.gem
+  - bundle install
+  - bundle exec gem install --local grpc-*.gem
   - mkdir -p ../vendor/cache
   - cp grpc-*.gem ../vendor/cache
   - cd ..
