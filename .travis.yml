@@ -14,7 +14,7 @@ rvm:
 before_install:
   - git clone https://github.com/robert-w-gries/grpc.git
   - cd grpc
-  - git checkout release-0_12
+  - git checkout travis-fix
   - gem build grpc.gemspec
   - gem install --local --force grpc-*.gem
   - mkdir -p ../vendor/cache
