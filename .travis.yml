@@ -19,8 +19,9 @@ before_install:
   - cd grpc
   - git checkout ruby_bundle_core_release
   - gem build grpc.gemspec
-  - bundle install
-  - bundle exec gem install --local grpc-*.gem
+  - gem install --local grpc-*.gem
+  - mkdir -p ../vendor/cache
+  - cp grpc-*.gem ../vendor/cache
   - cd ..
   - rm -rf grpc
 
